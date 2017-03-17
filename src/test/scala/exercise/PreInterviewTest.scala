@@ -74,8 +74,17 @@ class PreInterviewTest extends FlatSpec with Matchers {
 	"Orange promotion" should "cost 4 oranges when buying 5" in {
 		ShoppingCart.addItems(List("Orange", "Orange", "Orange", "Orange", "Orange"))
 		ShoppingCart.checkOutWithOffers() should equal(1.00)
+	}
+
+	it should "cost 4 oranges when buying 6" in {
 		ShoppingCart.addItem("Orange")
 		ShoppingCart.checkOutWithOffers() should equal(1.00)
+		ShoppingCart.clearBasket()
+	}
+
+	it should "cost 5 oranges when buying 7" in {
+		ShoppingCart.addItems(List("Orange", "Orange", "Orange", "Orange", "Orange", "Orange", "Orange"))
+		ShoppingCart.checkOutWithOffers() should equal(1.25)
 		ShoppingCart.clearBasket()
 	}
 }
