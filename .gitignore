@@ -1,4 +1,4 @@
 target/
 src/test/scala-2.11
 .ensime*
-
+project/

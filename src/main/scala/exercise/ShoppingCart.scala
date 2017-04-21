@@ -13,12 +13,16 @@ object ShoppingCart {
 	// number and value of goods in the basket
 	def checkOut(): Double = {
 		val total = basket.map(inventory).sum
-		BigDecimal(total.toDouble / 100).setScale(2, RoundingMode.UP).toDouble
+		cost(total)
 	}
 
 	// format the cost of basket items in currency
 	def formattedCost(cost: Double): String = {
 		f"£$cost"
+	}
+
+	def cost(total: Int): Double = {
+		BigDecimal(total.toDouble/100).setScale(2, RoundingMode.UP).toDouble
 	}
 
 	def checkOutWithOffers(): Double = {
@@ -29,7 +33,7 @@ object ShoppingCart {
 		val orangePromo = Offers.threeForTwo(numberOfOranges) * inventory("Orange")
 
 		val total = applePromo + orangePromo
-		BigDecimal(total.toDouble / 100).setScale(2, RoundingMode.UP).toDouble
+		cost(total)
 	}
 
 	def addItem(item: String): Unit = {
