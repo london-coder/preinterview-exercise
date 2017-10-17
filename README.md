@@ -2,7 +2,7 @@
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
-### This repository contains the solution to the codeing exercise of a shopping cart. ###
+### This repository contains a solution to the programming exercise of a shopping cart. ###
 
 * Quick summary
 * Version
